@@ -1,0 +1,36 @@
+@CRUDUsreMgmt_HostAddress = http://localhost:5181
+@token = CRUD
+
+### Create a new user
+POST {{CRUDUsreMgmt_HostAddress}}/api/users
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "David E",
+  "email": "johndoe@example.com",
+  "password": "password123",
+  "Role": "SRE"
+}
+
+### Get all users
+GET {{CRUDUsreMgmt_HostAddress}}/api/users
+Authorization: {{token}}
+
+### Get a specific user by ID
+GET {{CRUDUsreMgmt_HostAddress}}/api/users/1
+Authorization: {{token}}
+
+### Update a user by ID
+PUT {{CRUDUsreMgmt_HostAddress}}/api/users/1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "John Updated",
+  "email": "johnupdated@example.com"
+}
+
+### Delete a user by ID
+DELETE {{CRUDUsreMgmt_HostAddress}}/api/users/1
+Authorization: {{token}}
